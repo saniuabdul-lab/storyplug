@@ -86,7 +86,7 @@ function ElderScene({ state }) {
         </defs>
 
         {/* Background night sky */}
-        <rect width="420" height="260" fill="#0d0800" />
+        <rect width="420" height="260" fill="#1e1005" />
 
         {/* Stars */}
         {[[30,20],[80,15],[120,30],[200,10],[280,25],[340,15],[390,30],[60,50],[150,8],[310,40],[370,55]].map(([x,y],i) => (
@@ -281,9 +281,9 @@ const css = `
     100% { transform: translate(${Math.random()*30-15}px,${Math.random()*30-15}px) scale(0.6); opacity: 0.2; }
   }
 
-  body { background: #080500; color: #f0e6d3; font-family: 'Libre Baskerville', Georgia, serif; min-height: 100vh; }
+  body { background: #1a0f02; color: #f0e6d3; font-family: 'Libre Baskerville', Georgia, serif; min-height: 100vh; }
 
-  .app { min-height: 100vh; background: radial-gradient(ellipse at 30% 20%, rgba(140,70,10,0.2) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(80,30,5,0.15) 0%, transparent 60%), #080500; position: relative; padding-bottom: 60px; }
+  .app { min-height: 100vh; background: radial-gradient(ellipse at 30% 20%, rgba(140,70,10,0.2) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(80,30,5,0.15) 0%, transparent 60%), #1a0f02; position: relative; padding-bottom: 60px; }
 
   .header { text-align: center; padding: 32px 20px 20px; border-bottom: 1px solid rgba(180,100,30,0.2); position: relative; }
   .header::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background: linear-gradient(90deg, transparent, #d4963c, #f0c060, #d4963c, transparent); }
@@ -294,7 +294,7 @@ const css = `
 
   .main { max-width: 700px; margin: 0 auto; padding: 24px 16px 0; display: flex; flex-direction: column; gap: 18px; position: relative; z-index: 1; }
 
-  .panel { background: rgba(18,10,2,0.92); border:1px solid rgba(160,100,30,0.22); border-radius:4px; padding:20px; position:relative; overflow:hidden; }
+  .panel { background: rgba(38,22,5,0.95); border:1px solid rgba(160,100,30,0.22); border-radius:4px; padding:20px; position:relative; overflow:hidden; }
   .panel::after { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:linear-gradient(180deg,#d4963c,#e8834a,transparent); }
   .panel-title { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#b06820; margin-bottom:14px; }
 
@@ -334,19 +334,19 @@ const css = `
   .char-input::placeholder { color:#40281a; }
   .char-input:focus { border-color:rgba(212,150,60,0.4); }
 
-  .generate-btn { width:100%; padding:16px; background:linear-gradient(135deg,#b06010 0%,#e8834a 50%,#b06010 100%); border:none; border-radius:3px; font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:#0d0800; cursor:pointer; letter-spacing:1px; transition:opacity 0.2s,transform 0.1s; position:relative; overflow:hidden; }
+  .generate-btn { width:100%; padding:16px; background:linear-gradient(135deg,#b06010 0%,#e8834a 50%,#b06010 100%); border:none; border-radius:3px; font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:#1e1005; cursor:pointer; letter-spacing:1px; transition:opacity 0.2s,transform 0.1s; position:relative; overflow:hidden; }
   .generate-btn:hover { opacity:0.88; }
   .generate-btn:active { transform:scale(0.99); }
   .generate-btn:disabled { opacity:0.45; cursor:not-allowed; }
   .generate-btn::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent); animation:shimmer 2.5s infinite; }
   @keyframes shimmer { 0%{left:-100%} 100%{left:100%} }
 
-  .story-panel { background:rgba(14,8,1,0.97); border:1px solid rgba(200,140,50,0.3); border-radius:4px; padding:28px 24px; position:relative; }
+  .story-panel { background:rgba(30,17,3,0.97); border:1px solid rgba(200,140,50,0.3); border-radius:4px; padding:28px 24px; position:relative; }
   .story-panel::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,#d4963c,#f5d48a,#d4963c,transparent); }
   .story-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(160,100,30,0.12); }
-  .story-badge { font-family:'Space Mono',monospace; font-size:8px; letter-spacing:3px; text-transform:uppercase; color:#0d0800; background:#d4963c; padding:3px 9px; border-radius:1px; }
+  .story-badge { font-family:'Space Mono',monospace; font-size:8px; letter-spacing:3px; text-transform:uppercase; color:#1e1005; background:#d4963c; padding:3px 9px; border-radius:1px; }
   .story-setting-tag { font-size:10px; color:#907050; font-family:'Space Mono',monospace; }
-  .story-content { font-size:15px; line-height:1.95; color:#e8d8c0; white-space:pre-wrap; }
+  .story-content { font-size:15px; line-height:1.95; color:#f5ead8; white-space:pre-wrap; }
   .ornament { text-align:center; color:#503020; font-size:16px; letter-spacing:8px; margin:4px 0; }
 
   .loading-state { text-align:center; padding:40px 20px; }
@@ -364,6 +364,8 @@ const css = `
   .action-btn.share-wa { color:#25D366; border-color:rgba(37,211,102,0.25); }
   .action-btn.share-wa:hover { background:rgba(37,211,102,0.08); border-color:#25D366; }
   .action-btn.share-tw { color:#1DA1F2; border-color:rgba(29,161,242,0.25); }
+  .action-btn.share-tt { color:#ff2d55; border-color:rgba(255,45,85,0.25); }
+  .action-btn.share-tt:hover { background:rgba(255,45,85,0.08); border-color:#ff2d55; }
   .action-btn.share-tw:hover { background:rgba(29,161,242,0.08); border-color:#1DA1F2; }
   .action-btn.audio-btn { color:#FFD700; border-color:rgba(255,215,0,0.25); }
   .action-btn.audio-btn:hover { background:rgba(255,215,0,0.08); border-color:#FFD700; }
@@ -381,7 +383,7 @@ const css = `
   .scene-wrapper { padding:8px 0 4px; }
   .scene-label { text-align:center; font-family:'Space Mono',monospace; font-size:8px; letter-spacing:3px; color:#503020; text-transform:uppercase; margin-top:6px; }
 
-  .footer { text-align:center; padding:32px 16px 0; font-family:'Space Mono',monospace; font-size:8px; letter-spacing:3px; text-transform:uppercase; color:#30180a; }
+  .footer { text-align:center; padding:32px 16px 0; font-family:'Space Mono',monospace; font-size:8px; letter-spacing:3px; text-transform:uppercase; color:#604020; }
 `;
 
 function Toggle({ label, value, onChange }) {
@@ -535,6 +537,14 @@ Start immediately with the story. No preamble.`;
   const shareTwitter = () => {
     const text = encodeURIComponent(`"${story.slice(0, 200)}..." — generated on Storyplug 🔥 #NaijaStories #Storyplug`);
     window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+  };
+
+  const shareTikTok = () => {
+    const appUrl = window.location.href;
+    const fullText = `${story.slice(0, 300)}...\n\n🔥 Generate your own African story FREE at:\n${appUrl}\n\nFollow @storyplug for more! #Storyplug #NaijaStories #AfricanStorytelling #NaijaTwitter`;
+    navigator.clipboard.writeText(fullText);
+    window.open(`https://www.tiktok.com/@storyplug`, "_blank");
+    alert("Story + app link copied! 📋 Paste it in your TikTok caption or video description.");
   };
 
   const toggleAudio = () => {
@@ -696,6 +706,10 @@ Start immediately with the story. No preamble.`;
                     </button>
                     <button className="action-btn share-tw" onClick={shareTwitter}>
                       🐦 Twitter
+                    </button>
+                    <button className="action-btn share-tt" onClick={shareTikTok}>
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style={{verticalAlign:"middle",marginRight:3}}><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+                      TikTok
                     </button>
                     <button className="action-btn" onClick={generateStory}>
                       🔄 Regenerate
