@@ -541,10 +541,10 @@ Start immediately with the story. No preamble.`;
 
   const shareTikTok = () => {
     const appUrl = window.location.href;
-    const fullText = `${story.slice(0, 300)}...\n\n🔥 Generate your own African story FREE at:\n${appUrl}\n\nFollow @storyplug for more! #Storyplug #NaijaStories #AfricanStorytelling #NaijaTwitter`;
+    const fullText = `${story.slice(0, 300)}...\n\n🔥 Generate your own African story FREE at:\n${appUrl}\n\n#Storyplug #NaijaStories #AfricanStorytelling`;
     navigator.clipboard.writeText(fullText);
-    window.open(`https://www.tiktok.com/@storyplug`, "_blank");
-    alert("Story + app link copied! 📋 Paste it in your TikTok caption or video description.");
+    window.open(`https://www.tiktok.com/`, "_blank");
+    alert("Story + app link copied! 📋 Open TikTok and paste it in your caption or video description.");
   };
 
   const toggleAudio = () => {
